@@ -12,7 +12,9 @@ x1 , x2 = input()
 inputF = [float(x1),float(x2)]
 
 #theta vectors of each layer
+#OR
 thetaMatrixOutputLayer = [[-10,20,20]]
+#AND - NOR
 thetaMatrixHiddenLayer = [[-30,20,20],[10,-20,-20]]
 
 #Propagation between layers
