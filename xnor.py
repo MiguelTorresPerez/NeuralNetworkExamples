@@ -15,7 +15,7 @@ inputF = [float(x1),float(x2)]
 thetaMatrixOutputLayer = [[-10,20,20]]
 thetaMatrixHiddenLayer = [[-30,20,20],[10,-20,-20]]
 
-#forward propagation
+#Propagation between layers
 a2 = forwardP(inputF,thetaMatrixHiddenLayer)
 H0 = forwardP(a2,thetaMatrixOr)
 
