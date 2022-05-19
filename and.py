@@ -4,7 +4,8 @@ import numpy as np
 
 sigmoid = lambda n : 1 / (1 + math.pow(math.e,-n))
 
-#logic gate cnn approach
+
+
 x1 , x2 = input()
 
 #and theta matrix
