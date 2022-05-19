@@ -11,11 +11,12 @@ forwardP = lambda x, theta : [sigmoid(np.dot([1]+x,t)) for t in theta]
 x1 , x2 = input()
 inputF = [float(x1),float(x2)]
 
-#theta vectors of each layer
-#OR
-thetaMatrixOutputLayer = [[-10,20,20]]
+#theta vectors of each layer --->
 #AND - NOR
 thetaMatrixHiddenLayer = [[-30,20,20],[10,-20,-20]]
+#OR
+thetaMatrixOutputLayer = [[-10,20,20]]
+
 
 #Propagation between layers
 a2 = forwardP(inputF,thetaMatrixHiddenLayer)
