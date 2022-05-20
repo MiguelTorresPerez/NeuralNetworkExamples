@@ -2,24 +2,21 @@ import math
 import numpy as np
 
 
-##sigmoid and forward Propagation functions
+
 sigmoid = lambda n : 1 / (1 + math.pow(math.e,-n))
-forwardP = lambda x, theta : [sigmoid(np.dot([1]+x,t)) for t in theta]
+propagate = lambda x, theta : [sigmoid(np.dot([1]+x,t)) for t in theta]
 
+'''Forward propagation from input layer to hypotheses H0 '''
+def forwardP(input_matrix,layer_matrix):
+    H0 = []
+    for l in layer_matrix:
+        H0 = propagate(input_matrix,l) if not H0 else propagate(H0,l)
+        
+    return H0
 
-
+#matrix with all layer weights
+matrix = [[[-30,20,20],[10,-20,-20]],[[-10,20,20]]]
 x1 , x2 = input()
-inputF = [float(x1),float(x2)]
+inputFeatures = [float(x1),float(x2)]
 
-#theta vectors of each layer --->
-#AND - NOR
-thetaMatrixHiddenLayer = [[-30,20,20],[10,-20,-20]]
-#OR
-thetaMatrixOutputLayer = [[-10,20,20]]
-
-
-#Propagation between layers
-a2 = forwardP(inputF,thetaMatrixHiddenLayer)
-H0 = forwardP(a2,thetaMatrixOr)
-
-print(H0)
+print(forwardP(inputFeatures,matrix))
